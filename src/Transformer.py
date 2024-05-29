@@ -1,12 +1,12 @@
 
-from settings import *
-from Attention import MultiHeadedAttention
-from FFN import PositionwiseFeedForward
-from PE import PositionalEncoding
-from EncoderDecoder import EncoderDecoder, Generator
-from Encoder import Encoder, EncoderLayer
-from Decoder import Decoder, DecoderLayer
-from Embedding import Embeddings
+from src.settings import *
+from src.Attention import MultiHeadedAttention
+from src.FFN import PositionwiseFeedForward
+from src.PE import PositionalEncoding
+from src.EncoderDecoder import EncoderDecoder, Generator
+from src.Encoder import Encoder, EncoderLayer
+from src.Decoder import Decoder, DecoderLayer
+from src.Embedding import Embeddings
 
 def make_model(
     src_vocab, tgt_vocab, N=6, d_model=512, d_ff=2048, h=8, dropout=0.1

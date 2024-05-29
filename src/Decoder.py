@@ -1,6 +1,6 @@
-from settings import *
-from Global import *
-from utils import *
+from src.settings import *
+from src.Global import *
+from src.utils import *
 
 """
 (Transformer Paper)
@@ -32,7 +32,7 @@ class Decoder(nn.Module):
         return self.norm(x)
 
 class DecoderLayer(nn.Module):
-    "Decoder is made of self-attn, src-attn, and feed forward (defined below)"
+    "Decoder is made of self-attn, src-attn, and feed forward"
     def __init__(self, size, self_attn, src_attn, feed_forward, dropout):
         super(DecoderLayer, self).__init__()
         self.size = size
@@ -43,6 +43,8 @@ class DecoderLayer(nn.Module):
 
     def forward(self, x, memory, src_mask, tgt_mask):
         "Follow Figure 1 (right) for connections."
+        "src_mask: encoder的输出的mask, tgt_mask: decoder的输出的mask"
+        "decoder的输出会被用作下一个decoder的输入, 所以还需要继续用tgt_mask"
         m = memory  # memory是encoder的输出
         x = self.sublayer[0](x, lambda x: self.self_attn(x, x, x, tgt_mask))
         # src_attn的K和V是encoder的输出, Q是decoder的输出

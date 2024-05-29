@@ -1,4 +1,4 @@
-from settings import *
+from src.settings import *
 
 class PositionalEncoding(nn.Module):
     "Implement the PE function."

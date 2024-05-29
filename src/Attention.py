@@ -1,5 +1,5 @@
-from settings import *
-from Global import *
+from src.settings import *
+from src.Global import *
 
 def attention(query, key, value, mask=None, dropout=None):
     "Compute 'Scaled Dot Product Attention'"

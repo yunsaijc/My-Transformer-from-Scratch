@@ -1,6 +1,6 @@
 # Global available functions
 
-from settings import *
+from src.settings import *
 
 def clones(module, N):
     "Produce N identical layers."

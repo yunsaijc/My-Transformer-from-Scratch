@@ -1,4 +1,4 @@
-from settings import *
+from src.settings import *
 
 class Embeddings(nn.Module):
     def __init__(self, d_model, vocab):

@@ -1,4 +1,4 @@
-from settings import *
+from src.settings import *
 
 def is_interactive_notebook():
     return __name__ == "__main__"

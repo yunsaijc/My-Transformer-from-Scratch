@@ -1,6 +1,6 @@
 
-from settings import *
-from Global import *
+from src.settings import *
+from src.Global import *
 
 """
 (Transformer Paper)
